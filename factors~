@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+import sys
+def rsa(num):
+    if num % 2 == 0:
+        d = num // 2
+        print(f"{num}={d}*{2}")
+        return
+    if num % 3 == 0:
+        d = num // 3
+        print(f"{num}={d}*{3}")
+        return
+    if num % 5 == 0:
+        d = num // 5
+        print(f"{num}={d}*{5}")
+        return
+    if num % 7 == 0:
+        d = num // 7
+        print(f"{num}={d}*{7}")
+        return
+    if num % 9 == 0:
+        d = num // 9
+        print(f"{num}={d}*{9}")
+        return
+    else:
+        print(f"{num}={num}*{1}")
+
+with open(sys.argv[1]) as f:
+    my_list = f.readlines()
+
+for l in my_list:
+    num = int(l)
+    rsa(num)
+11;rgb:0000/0000/0000
