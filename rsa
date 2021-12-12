@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+import sys
+def prime_chk(num):
+    isprime = True
+    for a in range(2, num):
+        if num % a == 0:
+            isprime = False
+    return isprime
+def myfunc():
+    with open(sys.argv[1]) as f:
+        n = f.readlines()
+
+    num =int(n[0])
+
+    prime_list = []
+    for m in range(2, num + 1):
+        a = prime_chk(m)
+        if a == True:
+            prime_list.append(m)
+    for prime in prime_list:
+        for prime2 in prime_list:
+            if prime * prime2 == num:
+                print("{}={}*{}".format(num, prime2, prime))
+                return
+
+myfunc()
